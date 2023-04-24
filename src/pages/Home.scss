@@ -1,0 +1,27 @@
+@import "../index.scss";
+
+.homeContainer {
+  background-color: $primary;
+  height: calc(100vh - 75px);
+  @include flex-centered;
+  @include tableScreen {
+    height: 100vh;
+  }
+
+  .container {
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 80%;
+    height: 95%;
+    display: flex;
+    overflow: hidden;
+
+    @include tableScreen {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 0px;
+    }
+
+  }
+}

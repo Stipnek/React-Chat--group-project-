@@ -1,0 +1,119 @@
+@import "../../../index.scss";
+@import "../Profile.scss";
+
+.profileAvatar {
+    #avatarContainer {
+
+        .iconBtn {
+            align-self: flex-end;
+        }
+
+        #avatarImage {
+            transition: ease .2s;
+
+            @include tableScreen {
+                width: 90px;
+                height: 90px;
+                margin: 6px;
+                box-shadow: 0 0 9px $mainDark;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 15px $primary;
+                transform: scale(1.05);
+            }
+
+            image-rendering: optimizeQuality;
+            vertical-align: middle;
+            object-fit: cover;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 1px solid $mainDark;
+            margin: 10px;
+            box-shadow: 0 0 15px $mainDark;
+        }
+
+        .profileName {
+            .profileTitle {
+                font-weight: 600;
+                margin: 10px 0;
+                font-size: calc(15px + 2 * ((100vw - 320px) / 680));
+
+                @include tableScreen {
+                    font-size: 1em;
+                    margin: 7px;
+                }
+            }
+        }
+
+    }
+}
+
+.profileDescContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -8px;
+    height: calc(100% - 50px);
+
+    @include tableScreen {
+        flex-direction: column;
+    }
+
+    .profileDesc {
+        @include tableScreen {}
+
+        .profileDescDivs {
+            @include tableScreen {
+                width: fit-content;
+                height: 15%;
+            }
+
+            display: flex;
+            align-items: center;
+            height: 15%;
+            justify-content: space-between;
+            border-bottom: 1px solid $mainDark;
+
+            span {
+                font-weight: 600;
+                margin: 0 5px 0 0;
+                padding: 0;
+            }
+        }
+
+        #changeDescBtn {
+            margin-top: 10px;
+        }
+
+        .descForm {
+            height: 80%;
+
+            @include tableScreen {
+                width: 60%;
+            }
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin-top: 10px;
+            gap: 8px;
+            width: 100%;
+
+            .descInput {
+                @include profileInputs;
+                padding: 7px;
+            }
+        }
+
+        button {
+            align-self: flex-start;
+        }
+    }
+
+    .bugLink {
+        a {
+            text-decoration: none;
+        }
+    }
+}

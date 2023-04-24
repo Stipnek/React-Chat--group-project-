@@ -1,0 +1,124 @@
+@import "../../index.scss";
+
+@mixin profileInputs {
+    padding: 7px;
+    border: none;
+    background-color: $mainDark;
+    color: $mainLight;
+    font-size: calc(12px + 2 * ((100vw - 320px) / 680));
+}
+
+.profileContainer {
+    @include flex-centered;
+    background-color: $primary;
+
+    height: calc(100vh - 75px);
+    width: 100%;
+    gap: 2%;
+
+    @include tableScreen {
+        @include tableScreenMainContainer;
+        @include tableScreenWrap;
+        margin-top: 0;
+        margin-left: 50px;
+    }
+
+    .profileWrap {
+        background-color: #fff;
+        padding: 90px 30px;
+        width: calc(100vw - 130px);
+        max-width: 550px;
+        margin: 0;
+
+        #homeReturn {
+            background-color: #fff;
+            color: $primary;
+            transition: ease .2s;
+            align-self: flex-start;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            border: none;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        .profileBody {
+            .block-tabs {
+                display: flex;
+                transition: ease 0.3s;
+
+                @include tableScreen {
+                    justify-content: space-evenly;
+                    padding: 5px;
+                    font-size: calc(12px + 2 * ((100vw - 320px) / 680));
+                    display: none;
+                }
+
+                justify-content: space-around;
+                padding: 10px;
+                color: $primary;
+                cursor: pointer;
+
+                .tabs {
+                    background-color: $mainLight;
+                    width: 140px;
+                    padding: 7px 15px;
+                    border-radius: 15px;
+                    box-shadow: 0px 0px 3px $mainDark;
+                    text-align: center;
+                }
+
+                .active-tabs {
+                    @include tableScreen {
+                        padding: 4px 10px;
+                    }
+
+                    background-color: $mainDark;
+                    color: $mainLight;
+                    font-weight: 600;
+                }
+            }
+
+            .content {
+                @include tableScreen {
+                    padding: 6 15px;
+                    display: flex;
+                }
+
+                background: white;
+                width: 100%;
+                height: inherit;
+                display: none;
+            }
+
+            .active-content {
+                display: block;
+                margin: auto;
+            }
+        }
+
+        .profileInput {
+            @include profileInputs;
+        }
+    }
+
+    .iconBtn {
+        font-size: calc(12px + 2 * ((100vw - 320px) / 680));
+        border: none;
+        outline: none;
+        color: $primary;
+        background-color: #fff;
+        transition: ease 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+
+    .formError {
+        @include errorsForm;
+    }
+}

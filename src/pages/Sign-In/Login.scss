@@ -1,0 +1,49 @@
+@import '../../index.scss';
+
+.loginContainer {
+    @include mainScreenContainer;
+
+    @include tableScreen {
+        @include tableScreenMainContainer;
+    }
+
+    .loginWrap {
+        @include inputBox;
+        min-height: 260px;
+
+        @include tableScreen {
+            @include tableScreenWrap;
+        }
+
+        .title {
+            @include mainScreenTitles;
+
+            @include tableScreen {
+                @include tableScreenTitle;
+            }
+        }
+
+        .loginForm {
+            margin-top: 10%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            @include tableScreen {
+                width: 90%;
+            }
+
+            .loginInput {
+                @include initial-inputs;
+            }
+
+            #loginSubmit {
+                @include mainButtonForSubmission;
+            }
+
+            .formError {
+                @include errorsForm;
+            }
+        }
+    }
+}

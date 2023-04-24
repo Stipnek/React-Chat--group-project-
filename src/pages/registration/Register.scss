@@ -1,0 +1,72 @@
+@import '../../index.scss';
+
+.registerContainer {
+    @include mainScreenContainer;
+
+    @include tableScreen {
+        @include tableScreenMainContainer;
+    }
+
+    .registerWrap {
+        @include inputBox;
+        min-height: 260px;
+
+        @include tableScreen {
+            @include tableScreenWrap;
+            height: fit-content;
+        }
+
+        .title {
+            @include mainScreenTitles;
+
+            @include tableScreen {
+                @include tableScreenTitle;
+            }
+        }
+
+        .registerForm {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            @include tableScreen {
+                width: 90%;
+            }
+
+            .registerInput {
+                @include initial-inputs;
+            }
+
+            #registerSubmit {
+                @include mainButtonForSubmission;
+                margin-bottom: -15%;
+                margin-top: 0;
+            }
+
+            #avatarInput {
+                display: flex;
+                align-items: center;
+                gap: 2%;
+                font-size: 1em;
+                color: $primary;
+
+                .regImg {
+                    font-size: 2em;
+                }
+
+                @include tableScreen {
+                    justify-content: center;
+                    width: 90%;
+                }
+            }
+
+            #avatarImage {
+                width: 10%;
+            }
+
+            .formError {
+                @include errorsForm;
+            }
+        }
+    }
+}
